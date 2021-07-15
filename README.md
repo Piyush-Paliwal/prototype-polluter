@@ -26,3 +26,6 @@ Use "-h" for help
 ```
 <img width="799" alt="Screenshot 2021-07-10 at 1 33 25 PM" src="https://user-images.githubusercontent.com/46394419/125156723-93690c80-e184-11eb-8023-7dfb78eaefa2.png">
 
+## About
+
+This tool is actually an upgrade to the <a href="https://github.com/detectify/page-fetch">page-fetch</a> tool.
