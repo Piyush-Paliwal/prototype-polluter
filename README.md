@@ -28,4 +28,8 @@ Use "-h" for help
 
 ## About
 
-This tool is actually an upgrade to the <a href="https://github.com/detectify/page-fetch">page-fetch</a> tool.
+This tool is actually built on the <a href="https://github.com/detectify/page-fetch">page-fetch</a> tool.
+<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&&&
+<br>
+Sometimes this tool can also give false-positive report, so before reporting the vulnerability please have a manual look to the vulnerability.
