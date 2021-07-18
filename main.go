@@ -68,7 +68,7 @@ func main() {
 			if !NotVulnerable {
 				fmt.Println(string(colorRed),"Vulnerable --> "+line+"?__proto__[testparam]=testval")
 			} else if NotVulnerable && *wordPtr == true{
-				fmt.Println(string(colorGreen),"Not Vulnerable --> "+line+"&__proto__[testparam]=testval")
+				fmt.Println(string(colorGreen),"Not Vulnerable --> "+line+"?__proto__[testparam]=testval")
 			}
 		}
 	}
