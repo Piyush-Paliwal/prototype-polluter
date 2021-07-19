@@ -48,7 +48,11 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		var line = scanner.Text()
-
+		
+		if len(line) == 0 {
+			continue
+		}
+		
 		matched, _ := regexp.MatchString(`\?`, line)
 		if matched {
 			excd := ("echo '"+line+"&__proto__[testparam]=testval' | page-fetch -j \"window.testparam == 'testval'? 'Vulnerable' : 'Not Vulnerable'\" | grep ^JS | awk '{print $3, $4}'")
