@@ -55,7 +55,7 @@ func main() {
 		
 		matched, _ := regexp.MatchString(`\?`, line)
 		if matched {
-			excd := ("echo '"+line+"&__proto__[testparam]=testval' | page-fetch -j \"window.testparam == 'testval'? 'Vulnerable' : 'Not Vulnerable'\" -o 2>&1 | grep ^JS | awk '{print $3, $4}'")
+			excd := ("echo '"+line+"&__proto__[testparam]=testval' | page-fetch -j \"window.testparam == 'testval'? 'Vulnerable' : 'Not Vulnerable'\" -o /tmp/out | grep ^JS | awk '{print $3, $4}'")
 			cmd, _ := exec.Command("bash", "-c", excd).Output()
 			output := string(cmd[:])
 			NotVulnerable, _ := regexp.MatchString("Not Vulnerable", output)
@@ -65,7 +65,7 @@ func main() {
 				fmt.Println(string(colorGreen),"Not Vulnerable --> "+line+"&__proto__[testparam]=testval")
 			}
 		} else {
-			excd := ("echo '"+line+"?__proto__[testparam]=testval' | page-fetch -j \"window.testparam == 'testval'? 'Vulnerable' : 'Not Vulnerable'\" -o 2>&1 | grep ^JS | awk '{print $3, $4}'")
+			excd := ("echo '"+line+"?__proto__[testparam]=testval' | page-fetch -j \"window.testparam == 'testval'? 'Vulnerable' : 'Not Vulnerable'\" -o /tmp/out | grep ^JS | awk '{print $3, $4}'")
 			cmd, _ := exec.Command("bash", "-c", excd).Output()
 			output := string(cmd[:])
 			NotVulnerable, _ := regexp.MatchString("Not Vulnerable", output)
